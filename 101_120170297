@@ -1,0 +1,67 @@
+<?php
+
+#========= assigment_2_A ==============
+$presidents = array(
+	"Egypt" =>"Al-Sisi" , 
+	"Algeria" =>"Abdelaziz Bouteflika" , 
+	"Saudi Arabia" =>"Salman" , 
+	"Sudan" =>"Omar Al-Bashir" , 
+	"Jordan" =>"Al Hussein" ,
+	);
+#======================================
+
+
+#========= assigment_2_B ==============
+$IUG_Faculties = array(
+          "IT" => array ("Dean"=>"Rebhi Barhoom", "Highest GPA"=>"95.6", "Lowest GPA"=>"69.5"),
+         "Nursing" => array ("Dean"=>"Ahmad", "Highest GPA"=>"94.3", "Lowest GPA"=>"75.5"),  
+         "ENG" => array ("Dean"=>"Mohsan", "Highest GPA"=>"97.2", "Lowest GPA"=>"62.5"),
+         "Science" => array ("Dean"=>"Mosa", "Highest GPA"=>"98.5", "Lowest GPA"=>"77.5"),
+  );
+#======================================
+
+
+#========= assigment_2_C ==============
+$stdGrades = array(
+	"CSCI2309" =>89 , 
+	"SICT2307" =>89 , 
+	"SICT2107" =>94 , 
+	"CSCI2309" =>89 , 
+	"SDEV2301" =>94 ,
+	"CSCI2109" =>89 ,
+	);
+
+
+#======================================
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>assignment 2</title>
+</head>
+<body>
+
+	<table border="1">
+		<?php 
+		$total=0;
+		$count=0;
+			echo "<tr><th>Course</th><th>Grade</th></tr>";
+		foreach ($stdGrades as $key => $value) {
+			echo "<tr><th>".$key."</th>"."<td>".$value."</td>"."</tr>";
+			$total+=$value;
+			$count++;
+		}
+
+		 ?>
+		 <tfoot>
+		 	<?php
+		 	$gpa = $total/$count;
+		 	echo "<th>GPA</th><th>$gpa</th>";
+		 	?>
+		 </tfoot>
+	</table>
+
+
+</body>
+</html>
